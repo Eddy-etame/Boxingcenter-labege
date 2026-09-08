@@ -194,7 +194,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'C’est réservé aux jeunes ?',
         texte:
-          'Non. Le cours est ouvert à tous les niveaux et à tous les âges d’adultes. Beaucoup y arrivent après quelques mois de boxe anglaise, d’autres commencent directement là.',
+          'Le cours accueille tous les âges d’adultes et tous les niveaux. Beaucoup y arrivent après quelques mois de boxe anglaise, d’autres commencent directement là.',
       },
       {
         titre: 'Il faut acheter des protège-tibias ?',
@@ -264,7 +264,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Il faut acheter des gants ?',
         texte:
-          'Non, le club les prête. Une tenue de sport et une bouteille d’eau suffisent pour les premières séances.',
+          'Le club les prête. Une tenue de sport et une bouteille d’eau suffisent pour les premières séances.',
       },
     ],
   },

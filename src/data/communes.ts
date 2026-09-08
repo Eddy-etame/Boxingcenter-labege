@@ -89,7 +89,7 @@ export const COMMUNES: readonly Commune[] = [
       {
         titre: 'Il faut apporter des gants ?',
         texte:
-          'Non, le club les prête. Pour découvrir, une tenue de sport et une bouteille d’eau suffisent.',
+          'Le club les prête. Pour découvrir, une tenue de sport et une bouteille d’eau suffisent.',
       },
     ],
   },
