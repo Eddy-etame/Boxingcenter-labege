@@ -29,21 +29,21 @@ Nav : Plannings ↗ `mmatoulouse.com/plannings/` · Tarifs ↗ `/tarifs/`.
 ## Mots-clés
 9 motifs × {Labège, Saint-Orens, Castanet-Tolosan}. Secondaires : 31670, Innopole, Enova, métro B, sud-est toulousain, à ciel ouvert, Labègeois, cours du midi Labège.
 
-## Images — 8 TMBC (Ramonville, 6048 px, Cécile Domenech) + 5 « MARDI » (portraits) en tête ; stock ramonville (768×512) en vignette
+## Images — 8 TMBC (Ramonville, 6048 px) + 5 « MARDI » (portraits) en tête ; stock ramonville (768×512) en vignette
 | Source | Nom | Usage | Alt |
 |---|---|---|---|
-| TMBC-270 | `club-boxe-labege-boxing-center-01.jpg` | **hero** | Le ring et la cage sous le « Boxing Center » peint, cours en pleine séance |
-| CcileDomenech-116 | `salle-mma-labege-grappling-boxing-center-02.jpg` | /mma/ | Deux pratiquants au sol en grappling dans la cage, drapeaux |
-| CcileDomenech-098 | `cage-mma-labege-boxing-center-03.jpg` | /mma/ | La cage vue de haut, plusieurs binômes au sol |
-| TMBC-205 | `cours-boxe-labege-ring-boxing-center-04.jpg` | boxe anglaise | Un groupe sur le ring pendant un cours |
-| TMBC-290 | `encadrement-boxe-labege-boxing-center-05.jpg` | première séance | Un coach de dos face à un groupe attentif |
-| TMBC-294 | `entrainement-mma-labege-boxing-center-06.jpg` | MMA | Des pratiquants le long de la cage, gants aux mains |
-| MARDI_059 | `coach-boxe-labege-boxing-center-07.jpg` | encadrement | Un coach bras croisés devant la cage |
-| MARDI_062 | `coach-boxe-labege-boxing-center-08.jpg` | ethos | Un coach senior, poing levé, tee Boxing Center |
-| MARDI_048 | `preparation-physique-labege-boxing-center-09.jpg` | prépa physique | Séance au sol avec haltères |
-| TMBC-273 / 276 | `cardio-labege-boxing-center-10..11.jpg` | vignettes | Le plateau cardio |
+| TMBC-270 | `club-boxe-labege.webp` | **hero** | Le ring et la cage sous le « Boxing Center » peint, cours en pleine séance |
+| CcileDomenech-116 | `salle-mma-grappling-labege.webp` | /mma/ | Deux pratiquants au sol en grappling dans la cage, drapeaux |
+| CcileDomenech-098 | `cage-mma-labege.webp` | /mma/ | La cage vue de haut, plusieurs binômes au sol |
+| TMBC-205 | `cours-boxe-ring-labege.webp` | boxe anglaise | Un groupe sur le ring pendant un cours |
+| TMBC-290 | `encadrement-boxe-labege.webp` | première séance | Un coach de dos face à un groupe attentif |
+| TMBC-294 | `entrainement-mma-labege.webp` | MMA | Des pratiquants le long de la cage, gants aux mains |
+| MARDI_059 | `coach-boxe-labege.webp` | encadrement | Un coach bras croisés devant la cage |
+| MARDI_062 | `coach-boxe-labege-2.webp` | ethos | Un coach senior, poing levé, tee Boxing Center |
+| MARDI_048 | `preparation-physique-labege.webp` | prépa physique | Séance au sol avec haltères |
+| TMBC-273 / 276 | `cardio-labege.webp` | vignettes | Le plateau cardio |
 Légende : « Boxing Center Ramonville » (TMBC) ; les « MARDI » viennent d'une autre salle du réseau → légender la bonne salle une fois confirmée (Saint-Cyprien ?). Vérifier avant publication.
 
 ## Système visuel — sous-famille Ramonville : os · encre · accent **vert gazon profond** (à mesurer), le ciel ouvert comme motif (lumière du jour, pas de nuit — Ramonville lui-même est « nuit »).
 ## Concurrence : « club de boxe Labège », « MMA Labège », « boxe thaï Labège » + Saint-Orens, Castanet.
-## Bloquants : horaires Ramonville sur le site vivant · métro B Labège · salle réelle des photos « MARDI » · droits Cécile Domenech.
+## Bloquants : horaires Ramonville sur le site vivant · métro B Labège · salle réelle des photos « MARDI ».
