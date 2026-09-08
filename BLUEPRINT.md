@@ -42,8 +42,8 @@ Nav : Plannings ↗ `mmatoulouse.com/plannings/` · Tarifs ↗ `/tarifs/`.
 | MARDI_062 | `coach-boxe-labege-2.webp` | ethos | Un coach senior, poing levé, tee Boxing Center |
 | MARDI_048 | `preparation-physique-labege.webp` | prépa physique | Séance au sol avec haltères |
 | TMBC-273 / 276 | `cardio-labege.webp` | vignettes | Le plateau cardio |
-Légende : « … — Boxing Center Ramonville » pour les TMBC (club de destination) ; « … — Boxing Center » sans salle pour les « MARDI » (loi commune §8).
+Légende de toutes, TMBC comme « MARDI » : « … — Boxing Center Ramonville » (loi commune §8 : le club de destination, toujours).
 
 ## Système visuel — sous-famille Ramonville : os · encre · accent **vert gazon** — texte `#2f6b3a` (5,7:1 sur `#f4f1ea`, mesuré), aplats `#6fa84a` (loi commune §7), le ciel ouvert comme motif (lumière du jour, pas de nuit — Ramonville lui-même est « nuit »).
 ## Concurrence : « club de boxe Labège », « MMA Labège », « boxe thaï Labège » + Saint-Orens, Castanet.
-## Bloquants : confirmer l'offre sur `/activites/` le jour de l'écriture · la salle de la séance « MARDI » (question posée à Eddy).
+## Bloquants : confirmer l'offre sur `/activites/` le jour de l'écriture.
