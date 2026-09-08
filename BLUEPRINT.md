@@ -1,6 +1,6 @@
 # Boxing Center — depuis Labège · brief de site
 
-Loi commune : `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`.
+Loi commune : `./BLUEPRINT-FAMILLE.md` (copie de `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`).
 Domaine `www.boxingcenter-labege.fr` · dépôt `https://github.com/Eddy-etame/Boxingcenter-labege.git`.
 
 ## Destination — une seule
@@ -33,8 +33,8 @@ Nav : Plannings ↗ `mmatoulouse.com/plannings/` · Tarifs ↗ `/tarifs/`.
 | Source | Nom | Usage | Alt |
 |---|---|---|---|
 | TMBC-270 | `club-boxe-labege.webp` | **hero** | Le ring et la cage sous le « Boxing Center » peint, cours en pleine séance |
-| CcileDomenech-116 | `salle-mma-grappling-labege.webp` | /mma/ | Deux pratiquants au sol en grappling dans la cage, drapeaux |
-| CcileDomenech-098 | `cage-mma-labege.webp` | /mma/ | La cage vue de haut, plusieurs binômes au sol |
+| TMBC-2024-116 | `salle-mma-grappling-labege.webp` | /mma/ | Deux pratiquants au sol en grappling dans la cage, drapeaux |
+| TMBC-2024-098 | `cage-mma-labege.webp` | /mma/ | La cage vue de haut, plusieurs binômes au sol |
 | TMBC-205 | `cours-boxe-ring-labege.webp` | boxe anglaise | Un groupe sur le ring pendant un cours |
 | TMBC-290 | `encadrement-boxe-labege.webp` | première séance | Un coach de dos face à un groupe attentif |
 | TMBC-294 | `entrainement-mma-labege.webp` | MMA | Des pratiquants le long de la cage, gants aux mains |
@@ -44,6 +44,6 @@ Nav : Plannings ↗ `mmatoulouse.com/plannings/` · Tarifs ↗ `/tarifs/`.
 | TMBC-273 / 276 | `cardio-labege.webp` | vignettes | Le plateau cardio |
 Légende : « … — Boxing Center Ramonville » pour les TMBC (club de destination) ; « … — Boxing Center » sans salle pour les « MARDI » (loi commune §8).
 
-## Système visuel — sous-famille Ramonville : os · encre · accent **vert gazon profond** (à mesurer), le ciel ouvert comme motif (lumière du jour, pas de nuit — Ramonville lui-même est « nuit »).
+## Système visuel — sous-famille Ramonville : os · encre · accent **vert gazon** — texte `#2f6b3a` (5,7:1 sur `#f4f1ea`, mesuré), aplats `#6fa84a` (loi commune §7), le ciel ouvert comme motif (lumière du jour, pas de nuit — Ramonville lui-même est « nuit »).
 ## Concurrence : « club de boxe Labège », « MMA Labège », « boxe thaï Labège » + Saint-Orens, Castanet.
 ## Bloquants : confirmer l'offre sur `/activites/` le jour de l'écriture · la salle de la séance « MARDI » (question posée à Eddy).
