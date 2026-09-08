@@ -1,0 +1,625 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Seance from '../components/Seance.astro';
+import Photo from '../components/Photo.astro';
+import { SITE, DESTINATION, VILLE, LIMITROPHES, CONTACT } from '../data/verite';
+import { COMMUNES } from '../data/communes';
+import { OFFRES } from '../data/offres';
+import { ROLES } from '../data/medias';
+import { route } from '../data/routes';
+import { ITINERAIRES, MEILLEUR } from '../data/transports';
+
+/**
+ * Les questions telles qu'on les pose, avec des réponses courtes. Elles
+ * portent les recherches locales parce qu'elles y répondent, jamais pour les
+ * placer.
+ */
+const QUESTIONS = [
+  {
+    titre: 'Où est le club de boxe le plus proche de Labège ?',
+    texte:
+      'Au 33 rue des Ormes, à Ramonville-Saint-Agne, au terminus du métro B. Boxing Center y a 300 m² couverts en plein air, un grand ring, un octogone de sept mètres et un étage de musculation. La ligne 79 part de Labège et finit là-bas, sans changement.',
+  },
+  {
+    titre: 'Qu’est-ce qu’on peut y pratiquer ?',
+    texte:
+      'Huit cours : Boxe Anglaise, Boxe Pieds-Poings, MMA tous niveaux, Grappling, Lady Punch, Boxing Camp, École enfants dès 3 ans, et l’accès libre à l’étage musculation. Vingt-deux cours par semaine au total.',
+  },
+  {
+    titre: 'Je n’ai jamais fait de sport de combat. Je peux venir ?',
+    texte:
+      'Oui, c’est le cas de la plupart des gens qui s’inscrivent. Le club l’écrit lui-même : tu débutes, tu es le bienvenu. Pas de test à l’entrée, et les gants sont prêtés. Une première séance, c’est de l’échauffement, un geste travaillé lentement, du sac et des pattes d’ours.',
+  },
+  {
+    titre: 'Il y a un vrai octogone pour le MMA ?',
+    texte:
+      'Oui, sept mètres, et l’entraînement se fait dedans. Il est sous les 300 m² couverts en plein air du club — c’est ce qui le distingue dans le réseau. Le grappling est un cours à part, sans aucune frappe.',
+  },
+  {
+    titre: 'Je travaille à l’Innopole. Il y a des cours le midi ?',
+    texte:
+      'Le club publie 22 cours par semaine, du lundi midi au samedi après-midi, et ouvre de 10h à 21h30. Le midi et la sortie de bureau sont les deux créneaux qui tiennent le mieux dans une semaine de travail. Le planning du club donne l’horaire exact.',
+  },
+  {
+    titre: 'Comment y aller sans voiture ?',
+    texte:
+      'La ligne 79 part de Labège — la gare, le centre commercial, le village d’entreprise — et finit à Ramonville, au terminus du métro B. Un seul bus, aucun changement.',
+  },
+  {
+    titre: 'Mon enfant peut s’inscrire ?',
+    texte:
+      'Oui, dès 3 ans. L’École enfants a trois groupes : 3 à 6 ans, 7 à 11 ans, 12 à 16 ans. Le principe est écrit noir sur blanc par le club — on touche, on ne frappe pas.',
+  },
+  {
+    titre: 'J’habite Saint-Orens ou Castanet-Tolosan.',
+    texte:
+      'Chaque commune a sa page ici. La ligne 79 dessert Saint-Orens comme Labège ; depuis Castanet, c’est la Linéo L6. Les deux finissent au même terminus, à Ramonville.',
+  },
+];
+---
+
+<Base page="accueil" faq={QUESTIONS}>
+  <Hero />
+
+  {/* ─────────── 02 — LE CLUB ─────────── */}
+  <section class="section proximite" aria-labelledby="t-proximite">
+    <div class="enveloppe proximite__inner">
+      <div class="proximite__texte">
+        <p class="cartouche"><span class="cartouche__num">02</span><span>Le club</span></p>
+        <h2 id="t-proximite">
+          300 m² à ciel ouvert,<br />
+          <span class="proximite__accent">un octogone de sept mètres.</span>
+        </h2>
+        <p class="lead">
+          <strong>Boxing Center accueille les {SITE.gentile}</strong> à
+          {' '}{DESTINATION.ville}, rue des Ormes — {DESTINATION.horaires.valeur}.
+        </p>
+        <p class="faible">
+          La salle est couverte mais ouverte sur l’extérieur : tu t’entraînes à
+          l’air libre, à l’abri. Au rez-de-chaussée, le ring et l’octogone. À
+          l’étage, un plateau de musculation et de cardio en accès libre — poids,
+          machines, vélo, rameur.
+        </p>
+        <dl class="proximite__faits">
+          <div><dt class="mono">Adresse</dt><dd>{DESTINATION.adresse}</dd></div>
+          <div><dt class="mono">Depuis {SITE.ville}</dt><dd>{DESTINATION.acces}</dd></div>
+          <div><dt class="mono">Téléphone</dt><dd><a class="lien" href={`tel:${DESTINATION.telephoneLien}`}>{DESTINATION.telephone}</a></dd></div>
+        </dl>
+        <a class="bouton proximite__lien" href={DESTINATION.site} rel="noopener">
+          <span>Ouvrir le site du club</span>
+          <span class="fleche" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <Photo
+        slug={ROLES.hero}
+        sizes="(max-width: 62rem) 100vw, 46vw"
+        ratio="4 / 5"
+        legende
+        class="proximite__image"
+      />
+    </div>
+  </section>
+
+  {/* ─────────── 03 — LE MOTEUR ─────────── */}
+  <Seance />
+
+  {/* ─────────── 04 — LES HUIT COURS ─────────── */}
+  <section class="section encre disciplines" aria-labelledby="t-disciplines">
+    <div class="enveloppe">
+      <p class="cartouche"><span class="cartouche__num">04</span><span>Huit cours</span></p>
+      <div class="disciplines__tete">
+        <h2 id="t-disciplines">Les cours, avec les noms<br />que tu verras sur le planning.</h2>
+        <p class="lead faible disciplines__intro">
+          Vingt-deux séances par semaine, réparties sur ces huit intitulés. Si un
+          nom ne figure pas ici, c’est qu’il ne figure pas chez eux.
+        </p>
+      </div>
+
+      <ol class="disciplines__liste">
+        {OFFRES.map((o, i) => (
+          <li class="reveler" style={`--retard:${i * 45}ms`}>
+            <span class="mono disc__num">{String(i + 1).padStart(2, '0')}</span>
+            <div class="disc__corps">
+              <h3 class="disc__nom">{o.intitule}</h3>
+              <p class="disc__detail">{o.detail}</p>
+            </div>
+            {o.ages && <span class="mono disc__age">{o.ages}</span>}
+          </li>
+        ))}
+      </ol>
+
+      <p class="disciplines__source mono">
+        <a class="lien" href={DESTINATION.activites} rel="noopener">Toutes les activités du club ↗</a>
+      </p>
+    </div>
+  </section>
+
+  {/* ─────────── 05 — LA SALLE ─────────── */}
+  <section class="section preuve" aria-labelledby="t-preuve">
+    <div class="enveloppe preuve__tete">
+      <p class="cartouche"><span class="cartouche__num">05</span><span>Sur place</span></p>
+      <h2 id="t-preuve">Voilà l’octogone.</h2>
+      <p class="lead faible">
+        Sept mètres, sous les 300 m² couverts en plein air. Toutes les photos de
+        ce site ont été prises au club.
+      </p>
+    </div>
+    <div class="enveloppe">
+      <Photo slug={ROLES.signature} sizes="100vw" ratio="16 / 9" legende class="preuve__image" />
+    </div>
+  </section>
+
+  {/* ─────────── 06 — LA PREMIÈRE SÉANCE ─────────── */}
+  <section class="section creuse premiere" aria-labelledby="t-premiere">
+    <div class="enveloppe premiere__inner">
+      <div class="premiere__image">
+        <Photo slug={ROLES.premiereSeance} sizes="(max-width: 62rem) 100vw, 40vw" ratio="3 / 4" />
+      </div>
+      <div class="premiere__texte">
+        <p class="cartouche"><span class="cartouche__num">06</span><span>La première fois</span></p>
+        <h2 id="t-premiere">Personne n’est arrivé en sachant boxer.</h2>
+        <ol class="premiere__etapes">
+          <li>
+            <span class="mono">01</span>
+            <p><strong>Le club prête les gants.</strong> Tu apportes une tenue de sport, une bouteille d’eau et une serviette. C’est tout.</p>
+          </li>
+          <li>
+            <span class="mono">02</span>
+            <p><strong>Tu ne combats pas.</strong> Une première séance, c’est de la corde, un geste décomposé, du sac et des pattes d’ours.</p>
+          </li>
+          <li>
+            <span class="mono">03</span>
+            <p><strong>Personne ne te regarde.</strong> Tout le monde a été débutant, et chacun est occupé à sa propre séance.</p>
+          </li>
+          <li>
+            <span class="mono">04</span>
+            <p><strong>Tu repars courbaturé, pas humilié.</strong> C’est le seul objectif d’une première séance.</p>
+          </li>
+        </ol>
+        <a class="lien premiere__lien" href={route('premiere-seance').chemin}>
+          Le déroulé complet, minute par minute →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ─────────── 07 — L'AMPLITUDE ─────────── */}
+  <section class="section amplitude" aria-labelledby="t-amplitude">
+    <div class="enveloppe amplitude__inner">
+      <div>
+        <p class="cartouche"><span class="cartouche__num">07</span><span>L’amplitude</span></p>
+        <p class="amplitude__grand">
+          <span>{DESTINATION.ouvertureTexte}</span>
+          <span class="amplitude__fleche" aria-hidden="true">→</span>
+          <span>{DESTINATION.fermetureTexte}</span>
+        </p>
+        <p class="mono amplitude__jours">six jours sur sept</p>
+      </div>
+      <div class="amplitude__texte">
+        <h2 id="t-amplitude">Vingt-deux cours par semaine.</h2>
+        <p class="lead faible">
+          Du lundi midi au samedi après-midi. C’est ce qui compte quand on
+          travaille à l’Innopole ou qu’on a des horaires irréguliers : tu prends
+          le créneau qui rentre dans ta semaine, pas l’inverse.
+        </p>
+        <ul class="amplitude__args">
+          <li><span class="amplitude__tiret" aria-hidden="true"></span>Un créneau le midi, entre deux réunions</li>
+          <li><span class="amplitude__tiret" aria-hidden="true"></span>Un créneau en sortie de bureau</li>
+          <li><span class="amplitude__tiret" aria-hidden="true"></span>Le samedi, pour les semaines trop pleines</li>
+        </ul>
+        <a class="bouton" href={DESTINATION.plannings} rel="noopener">
+          <span>Voir le planning détaillé</span>
+          <span class="fleche" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ─────────── 08 — Y ALLER ─────────── */}
+  <section class="section trajet" aria-labelledby="t-trajet">
+    <div class="enveloppe trajet__inner">
+      <div class="trajet__texte">
+        <p class="cartouche"><span class="cartouche__num">08</span><span>Y aller</span></p>
+        <h2 id="t-trajet">
+          Trois lignes,<br />
+          <span class="trajet__accent">un seul terminus.</span>
+        </h2>
+        <p class="lead faible">{MEILLEUR.resume}</p>
+        <div class="trajet__actions">
+          <a class="bouton bouton--signal" href={route('transports').chemin}>
+            <span>Le trajet, arrêt par arrêt</span><span class="fleche" aria-hidden="true">→</span>
+          </a>
+          <a class="bouton" href={DESTINATION.plannings} rel="noopener">
+            <span>Le planning du club</span><span class="fleche" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <ol class="trajet__lignes">
+        {ITINERAIRES.map((it, i) => (
+          <li class="reveler" style={`--retard:${i * 80}ms`}>
+            <a href={`${route('transports').chemin}?trajet=${it.id}`}>
+              <span class={`trajet__code trajet__code--${it.etapes[0].mode}`}>{it.etapes[0].code}</span>
+              <span class="trajet__parcours">{it.etapes[0].de} → {it.etapes[0].a}</span>
+              <span class="mono trajet__jours">{it.etapes[0].jours}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  {/* ─────────── 09 — LES QUESTIONS ─────────── */}
+  <section class="section creuse questions" aria-labelledby="t-questions">
+    <div class="enveloppe questions__inner">
+      <div class="questions__tete">
+        <p class="cartouche"><span class="cartouche__num">09</span><span>Ce qu’on nous demande</span></p>
+        <h2 id="t-questions">Les questions qu’on nous pose<br />le plus souvent.</h2>
+        <p class="lead faible">
+          Les réponses sont courtes. Si la tienne n’y est pas, écris-nous&nbsp;:
+          on répond vite.
+        </p>
+      </div>
+      <div class="questions__liste">
+        {QUESTIONS.map((q, i) => (
+          <details class="qr" open={i === 0}>
+            <summary>
+              <span class="qr__q">{q.titre}</span>
+              <span class="qr__signe" aria-hidden="true"></span>
+            </summary>
+            <p class="qr__r">{q.texte}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─────────── 10 — LE SECTEUR ─────────── */}
+  <section class="section secteur" aria-labelledby="t-secteur">
+    <div class="enveloppe">
+      <p class="cartouche"><span class="cartouche__num">10</span><span>Le secteur</span></p>
+      <div class="secteur__tete">
+        <h2 id="t-secteur">
+          {SITE.ville}, {SITE.codePostal},<br />
+          <span class="secteur__accent">et ce qu’il y a autour.</span>
+        </h2>
+        <p class="lead faible secteur__intro">
+          {VILLE.population.valeur.replace(' (2023)', '')}, et bien plus de monde
+          en journée sur l’Innopole. Deux communes du secteur ont leur propre
+          page ici, parce que la ligne n’y est pas la même.
+        </p>
+      </div>
+
+      <ul class="secteur__pages">
+        {COMMUNES.map((c) => (
+          <li class="reveler">
+            <a class="carte" href={`/${c.id}/`}>
+              <span class="mono carte__cp">{c.codePostal}</span>
+              <span class="carte__nom">{c.nom}</span>
+              <span class="carte__note">{c.cotes[0].valeur}</span>
+              <span class="mono carte__aller">Y aller depuis {c.nom} <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mono secteur__cle">Les six communes limitrophes de {SITE.ville}</p>
+      <ul class="secteur__liste">
+        {LIMITROPHES.map((c) => (
+          <li class={c.note ? 'secteur__item secteur__item--cle' : 'secteur__item'}>
+            <span class="secteur__nom">{c.nom}</span>
+            {c.note && <span class="secteur__note">{c.note}</span>}
+          </li>
+        ))}
+      </ul>
+      <p class="secteur__pied">
+        Boxing Center accueille les habitants de {SITE.ville} et du {SITE.secteur}
+        {' '}dans son club de {DESTINATION.ville}. Accès par {VILLE.routes.valeur}&nbsp;;
+        en transports, {VILLE.bus.valeur}.
+      </p>
+    </div>
+  </section>
+
+  {/* ─────────── 11 — DEUX VISAGES ─────────── */}
+  <section class="section encre local" aria-labelledby="t-local">
+    <div class="enveloppe local__inner">
+      <div>
+        <p class="cartouche"><span class="cartouche__num">11</span><span>{SITE.ville}</span></p>
+        <h2 id="t-local">Une commune, deux publics.</h2>
+        <p class="lead">
+          {VILLE.figure.valeur.charAt(0).toUpperCase() + VILLE.figure.valeur.slice(1)}.
+        </p>
+        <p class="faible">
+          Ce site s’adresse aux deux. Aux Labégeois qui cherchent un club près de
+          chez eux, et aux milliers de personnes qui travaillent sur la zone et
+          veulent un cours du midi ou de sortie de bureau. Dans les deux cas, la
+          79 mène au même endroit, et le club est ouvert de 10h à 21h30.
+        </p>
+      </div>
+      <div class="local__photo">
+        <Photo slug={ROLES.calme} sizes="(max-width: 62rem) 100vw, 38vw" ratio="4 / 5" legende />
+      </div>
+    </div>
+  </section>
+
+  {/* ─────────── 12 — CONVERGENCE ─────────── */}
+  <section class="section convergence" aria-labelledby="t-convergence">
+    <div class="enveloppe convergence__inner">
+      <p class="cartouche"><span class="cartouche__num">12</span><span>Décider</span></p>
+      <h2 id="t-convergence">
+        Une ligne, un terminus,<br />
+        <span class="convergence__accent">et tu y es.</span>
+      </h2>
+      <p class="lead convergence__texte">
+        Réponds à deux questions et on te dit quel cours viser et à quel moment
+        venir. Si tu préfères demander, écris-nous en deux lignes&nbsp;: on te
+        répond avec un créneau.
+      </p>
+      <div class="convergence__actions">
+        <a class="bouton bouton--signal" href={route('contact').chemin}>
+          <span>Poser ma question</span><span class="fleche" aria-hidden="true">→</span>
+        </a>
+        <a class="bouton" href={DESTINATION.plannings} rel="noopener">
+          <span>Voir le planning</span><span class="fleche" aria-hidden="true">↗</span>
+        </a>
+        <a class="bouton" href={`tel:${CONTACT.telephoneLien.valeur}`}>
+          <span>{CONTACT.telephone.valeur}</span><span class="fleche" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ── 02 Le club ────────────────────────────────────────────────────── */
+  .proximite__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: var(--e-8);
+    align-items: center;
+  }
+  @media (max-width: 62rem) { .proximite__inner { grid-template-columns: 1fr; gap: var(--e-7); } }
+  .proximite h2 { max-width: 14ch; margin-bottom: var(--e-5); }
+  .proximite__accent { color: var(--signal-texte); }
+  .proximite .lead { max-width: 46ch; margin-bottom: var(--e-4); }
+  .proximite .faible { max-width: 52ch; }
+
+  .proximite__faits { margin: var(--e-6) 0; }
+  .proximite__faits > div {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: var(--e-3);
+    padding: var(--e-3) 0;
+    border-top: 1px solid var(--trait);
+    font-size: var(--t-petit);
+  }
+  .proximite__faits > div:last-child { border-bottom: 1px solid var(--trait); }
+  @media (max-width: 34rem) { .proximite__faits > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+  .proximite__faits dt { color: var(--graphite); padding-top: 0.15em; }
+  .proximite__faits dd { margin: 0; }
+
+  /* ── 04 Disciplines ────────────────────────────────────────────────── */
+  .disciplines__tete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--e-5) var(--e-8);
+    align-items: end;
+    margin-bottom: var(--e-7);
+  }
+  @media (max-width: 56rem) { .disciplines__tete { grid-template-columns: 1fr; } }
+  .disciplines__intro { max-width: 46ch; }
+
+  .disciplines__liste { list-style: none; }
+  .disciplines__liste li {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: var(--e-4);
+    align-items: baseline;
+    padding: var(--e-4) 0;
+    border-top: 1px solid var(--trait);
+    transition: padding-left var(--d-normal) var(--e-sortie);
+  }
+  .disciplines__liste li:last-child { border-bottom: 1px solid var(--trait); }
+  .disciplines__liste li:hover { padding-left: var(--e-3); }
+  @media (max-width: 44rem) { .disciplines__liste li { grid-template-columns: 2.25rem 1fr; } }
+  .disc__num { color: var(--signal-texte); font-weight: 700; }
+  .disc__nom { font-size: var(--t-h3); margin-bottom: 0.2rem; }
+  .disc__detail { font-size: var(--t-petit); color: var(--texte-faible); max-width: 56ch; }
+  .disc__age { color: var(--graphite); }
+  .disciplines__source { margin-top: var(--e-5); color: var(--graphite); text-transform: none; letter-spacing: 0.04em; }
+
+  /* ── 05 Preuve ─────────────────────────────────────────────────────── */
+  .preuve__tete { max-width: 56rem; margin-bottom: var(--e-7); }
+  .preuve h2 { max-width: 18ch; margin-bottom: var(--e-4); }
+
+  /* ── 06 Première séance ────────────────────────────────────────────── */
+  .premiere__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--e-8);
+    align-items: center;
+  }
+  @media (max-width: 62rem) { .premiere__inner { grid-template-columns: 1fr; } }
+  .premiere h2 { max-width: 16ch; margin-bottom: var(--e-6); }
+  .premiere__etapes { list-style: none; display: grid; }
+  .premiere__etapes li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: var(--e-4);
+    padding: var(--e-4) 0;
+    border-top: 1px solid var(--trait);
+  }
+  .premiere__etapes .mono { color: var(--signal-texte); padding-top: 0.3em; font-weight: 700; }
+  .premiere__etapes p { font-size: var(--t-petit); color: var(--texte-faible); max-width: 56ch; }
+  .premiere__etapes strong { color: var(--encre); font-weight: 600; }
+  .premiere__lien { display: inline-block; margin-top: var(--e-5); font-size: var(--t-petit); }
+
+  /* ── 07 Amplitude ──────────────────────────────────────────────────── */
+  .amplitude__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--e-7) var(--e-8);
+    align-items: center;
+  }
+  @media (max-width: 62rem) { .amplitude__inner { grid-template-columns: 1fr; } }
+  .amplitude__grand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+    font-family: var(--police-titre);
+    font-size: var(--t-display);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+  }
+  .amplitude__fleche { color: var(--signal-texte); font-size: 0.45em; }
+  .amplitude__jours { margin-top: var(--e-3); color: var(--signal-texte); letter-spacing: 0.18em; }
+  .amplitude__texte h2 { max-width: 18ch; margin-bottom: var(--e-4); }
+  .amplitude__texte .lead { max-width: 48ch; }
+  .amplitude__args { list-style: none; display: grid; gap: var(--e-3); margin: var(--e-6) 0; }
+  .amplitude__args li { display: flex; align-items: baseline; gap: var(--e-3); font-size: var(--t-petit); }
+  .amplitude__tiret { flex: none; width: 1.25rem; height: 1px; background: var(--signal-texte); }
+
+  /* ── 08 Y aller ────────────────────────────────────────────────────── */
+  .trajet__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: var(--e-8);
+    align-items: center;
+  }
+  @media (max-width: 62rem) { .trajet__inner { grid-template-columns: 1fr; gap: var(--e-6); } }
+  .trajet h2 { max-width: 16ch; margin-bottom: var(--e-4); }
+  .trajet__accent { color: var(--signal-texte); }
+  .trajet .lead { max-width: 50ch; }
+  .trajet__actions { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-6); }
+
+  .trajet__lignes { list-style: none; display: grid; gap: var(--e-3); }
+  .trajet__lignes a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'code parcours' 'code jours';
+    gap: 0.15rem var(--e-4);
+    align-items: center;
+    padding: var(--e-4) var(--e-5);
+    border: 1px solid var(--trait);
+    border-radius: var(--rayon-1);
+    background: var(--papier-vif);
+    text-decoration: none;
+    transition:
+      border-color var(--d-rapide) var(--e-mecanique),
+      transform var(--d-normal) var(--e-sortie);
+  }
+  .trajet__lignes a:hover { border-color: var(--signal-texte); transform: translateX(4px); }
+  .trajet__code {
+    grid-area: code;
+    display: grid;
+    place-items: center;
+    min-width: 3.2rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.35rem;
+    background: var(--encre);
+    color: var(--papier-vif);
+    font-family: var(--police-mono);
+    font-size: var(--t-petit);
+    font-weight: 700;
+  }
+  .trajet__code--metro { background: var(--signal-texte); }
+  .trajet__parcours { grid-area: parcours; font-weight: 600; font-size: var(--t-petit); }
+  .trajet__jours { grid-area: jours; color: var(--graphite); text-transform: none; letter-spacing: 0.05em; }
+
+  /* ── 09 Questions ──────────────────────────────────────────────────── */
+  .questions__inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: var(--e-8);
+    align-items: start;
+  }
+  @media (max-width: 62rem) { .questions__inner { grid-template-columns: 1fr; gap: var(--e-6); } }
+  .questions__tete h2 { max-width: 16ch; margin-bottom: var(--e-4); }
+  .questions__tete .lead { max-width: 40ch; }
+
+  /* ── 10 Secteur ────────────────────────────────────────────────────── */
+  .secteur__tete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--e-5) var(--e-8);
+    align-items: end;
+    margin-bottom: var(--e-7);
+  }
+  @media (max-width: 62rem) { .secteur__tete { grid-template-columns: 1fr; } }
+  .secteur__accent { color: var(--signal-texte); }
+  .secteur__intro { max-width: 48ch; }
+
+  .secteur__pages {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--e-4);
+    margin-bottom: var(--e-8);
+  }
+  .carte {
+    display: grid;
+    gap: 0.35rem;
+    height: 100%;
+    padding: var(--e-5);
+    border: 1px solid var(--trait);
+    border-radius: var(--rayon-1);
+    background: var(--papier-vif);
+    text-decoration: none;
+    transition:
+      border-color var(--d-rapide) var(--e-mecanique),
+      transform var(--d-normal) var(--e-sortie);
+  }
+  .carte:hover { border-color: var(--signal-texte); transform: translateY(-3px); }
+  .carte__cp { color: var(--graphite); }
+  .carte__nom {
+    font-family: var(--police-titre);
+    font-size: var(--t-h3);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  .carte__note { font-size: var(--t-petit); color: var(--texte-faible); }
+  .carte__aller { margin-top: var(--e-3); color: var(--signal-texte); text-transform: none; letter-spacing: 0.04em; }
+
+  .secteur__cle { color: var(--graphite); margin-bottom: var(--e-3); }
+  .secteur__liste {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    border-top: 1px solid var(--trait);
+  }
+  .secteur__item {
+    display: grid;
+    gap: 0.15rem;
+    padding: var(--e-4) var(--e-4) var(--e-4) 0;
+    border-bottom: 1px solid var(--trait);
+  }
+  .secteur__nom { font-weight: 600; font-size: var(--t-petit); }
+  .secteur__item--cle .secteur__nom { color: var(--signal-texte); }
+  .secteur__note { font-size: var(--t-micro); color: var(--graphite); }
+  .secteur__pied { margin-top: var(--e-6); max-width: 68ch; font-size: var(--t-petit); color: var(--texte-faible); }
+
+  /* ── 11 Deux visages ───────────────────────────────────────────────── */
+  .local__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--e-8);
+    align-items: center;
+  }
+  @media (max-width: 62rem) { .local__inner { grid-template-columns: 1fr; } }
+  .local h2 { max-width: 18ch; margin-bottom: var(--e-5); }
+  .local .lead { max-width: 48ch; margin-bottom: var(--e-4); }
+  .local .faible { max-width: 56ch; }
+
+  /* ── 12 Convergence ────────────────────────────────────────────────── */
+  .convergence { background: var(--papier-creuse); }
+  .convergence__inner { max-width: 48rem; }
+  .convergence h2 { margin-bottom: var(--e-5); }
+  .convergence__accent { color: var(--signal-texte); }
+  .convergence__texte { max-width: 52ch; color: var(--texte-faible); }
+  .convergence__actions { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-7); }
+</style>

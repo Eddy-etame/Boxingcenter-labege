@@ -1,0 +1,49 @@
+---
+/**
+ * TRANSPORTS EN COMMUN — le trajet complet, de Labège au 33 rue des Ormes.
+ *
+ * Le corps vit dans `components/Transports.astro`, piloté par
+ * `data/transports.ts` : les autres sites de la famille changent leur registre
+ * et héritent de la page.
+ */
+import Base from '../layouts/Base.astro';
+import Transports from '../components/Transports.astro';
+import { SITE, DESTINATION } from '../data/verite';
+
+const QUESTIONS = [
+  {
+    titre: `Quel bus va de ${SITE.ville} à ${DESTINATION.ville} ?`,
+    texte:
+      'La ligne 79. Elle traverse Labège — la gare, le centre commercial, le village d’entreprise — et finit à Ramonville, au terminus du métro B. Un seul bus, aucun changement, et le club est au 33 rue des Ormes.',
+  },
+  {
+    titre: 'Où descendre ?',
+    texte:
+      'Au terminus, à Ramonville. C’est là que finissent la 79, la Linéo L6 et le métro B — et c’est l’accès que le club indique lui-même.',
+  },
+  {
+    titre: 'Je pars de Castanet-Tolosan.',
+    texte:
+      'Prends la Linéo L6 : elle relie Castanet à Ramonville sans changement et finit au même terminus que la 79. C’est une ligne à haut niveau de service, qui passe souvent et roule tard.',
+  },
+  {
+    titre: 'Je pars de Saint-Orens-de-Gameville.',
+    texte:
+      'La 79 dessert aussi Saint-Orens : elle part de Saint-Orens Lycée et finit à Ramonville. C’est la même ligne que depuis Labège, dans le même sens.',
+  },
+  {
+    titre: 'Et si j’arrive de Toulouse ?',
+    texte:
+      'Le métro B finit à Ramonville. Tu descends au terminus et tu es dans le quartier du club. C’est le trajet le plus simple depuis le centre.',
+  },
+  {
+    titre: 'Les horaires sont où ?',
+    texte:
+      'Chez Tisséo, qui les publie et les met à jour à chaque saison. Chaque étape de cette page ouvre la fiche officielle de sa ligne.',
+  },
+];
+---
+
+<Base page="transports" faq={QUESTIONS}>
+  <Transports />
+</Base>

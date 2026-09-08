@@ -1,0 +1,68 @@
+{
+  "club-boxe-labege": {
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQBACdASoUAA0APxFysVAsJqSisAgBgCIJZgCdMoMulEuIlSGLlpRiItQAAPzShSuYHa7Gyxz7Rodqj14iWs1uGikkrda8G9Cyr0wIQo9DwUQAAAA=",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  },
+  "cage-mma-labege": {
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoUAA0APxF6tFAsKCUisAgBgCIJQBdgDSQFpJKK54uQAADOKzzeruxT5P7YSOu/YgwKtHLZ2ehpZCCdFlXVycQ1ixY+PWKaxHIxA3TEeZkInqdhkMWZ6PgA",
+    "w": 6016,
+    "h": 4016,
+    "ratio": 1.498
+  },
+  "grappling-labege": {
+    "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJZQAAQbUuU6yNemEAAP7lgE+w6HmcNRCj7euIiLOyQhPpk6f8LLoPwAA=",
+    "w": 5863,
+    "h": 3914,
+    "ratio": 1.498
+  },
+  "cours-boxe-labege": {
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoUAA0APxFwsFAsJiSisAgBgCIJYwCw7BPz8WCJIXxEAAD8gCJK0Xd7C1I2sxsvjMqqOJCOEdcn4Ym88VaUs979AAA=",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  },
+  "encadrement-boxe-labege": {
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoUAA0APxF0slCsJqSisAgBgCIJbACdACHWB6yzA0ojtuQA+l+jxhua2mAs6ayeetEXznwW/In1ftJBzqrQmrhn3RrsAEuGpw1b1dywAAA=",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  },
+  "entrainement-mma-labege": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUAA0APxFysVCsJqSisAgBgCIJQBOgA8crWRd6WYVIAP1uMWmv/MLrSA060CgkcFBclDf/XSzXJ7X0S3MyJVTIJjuKMAAA",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  },
+  "coach-boxe-labege": {
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQBACdASoUAB0APxFusFEsJiSisBgMAYAiCWUAyywLH+Y3TKAhsltDJbH05cdeAAD+eARqHVk98Ksgsk/EyHZTikb9kGOhzRDgsgPMY+MaC9uy4Fg0/GrkEKNWLNXJmcdRb7iAAAA=",
+    "w": 3956,
+    "h": 5653,
+    "ratio": 0.6998
+  },
+  "preparation-physique-labege": {
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoUAA0APxF2slEsJySisAgBgCIJZQCw7BswTB4S6yIAAP7dmZ5++KYO9jZE8n+T+bkbVekVVhanNy8LlOflOHYpTMhgg4tlwAA=",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "coach-boxe-labege-2": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoUAA0APxFysVAsJqSisAgBgCIJZQAASeFDUXMygxsscAD+JpvZlaigCvy3iFG3OD2F+Z2+771QFtkdnTZL/Im9m+VYAAAA",
+    "w": 6720,
+    "h": 4480,
+    "ratio": 1.5
+  },
+  "cardio-labege": {
+    "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoUAA0APxFysFAsJqSisAgBgCIJZQCdACB+m4OVEN6DFyAA/TrnP9vtT+LKWoLB1rG9IPrz+Pv/t2ipNM1hGOQJkKz4mAAA",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  },
+  "salle-de-boxe-labege": {
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoUAA0APxFwsFAsJiSisAgBgCIJYwDCgB6CwBXAPKrYgMAA/tlcjTU/rni//fPcc3lYA8gXgN8J/KeLlE5xS1FsAAA=",
+    "w": 6048,
+    "h": 4024,
+    "ratio": 1.503
+  }
+}

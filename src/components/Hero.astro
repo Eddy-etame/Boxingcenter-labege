@@ -1,0 +1,454 @@
+---
+/**
+ * LE HERO — « le terminus ».
+ *
+ * Trois lignes mènent au club, et toutes les trois s'y arrêtent : la 79 depuis
+ * Labège, la Linéo L6 depuis Castanet, le métro B depuis Toulouse. Elles
+ * finissent au même endroit — c'est ce que le dessin montre : un schéma de
+ * réseau qui converge sur un terminus, barre de fin de ligne comprise.
+ *
+ * Le nœud d'arrivée est un octogone, parce que c'est ce qu'il y a au bout :
+ * l'octogone de sept mètres du club.
+ *
+ * Tout est en SVG inline — aucun canvas, aucune bibliothèque, aucune requête.
+ * Sans JavaScript et en mouvement réduit, le plan est déjà à son état final.
+ * Deux tracés existent, horizontal et vertical.
+ */
+import { SITE, DESTINATION } from '../data/verite';
+import { route } from '../data/routes';
+
+const cotes = DESTINATION.faits;
+const surface = cotes[1].valeur;
+const equipement = cotes[2].valeur;
+const cours = cotes[4].valeur;
+---
+
+<section class="hero" aria-labelledby="t-hero">
+  <div class="enveloppe">
+    <p class="hero__cartouche mono">
+      <span class="hero__planche">Boxing Center</span>
+      <span aria-hidden="true">·</span>
+      <span>à proximité de {SITE.ville}</span>
+    </p>
+
+    <div class="hero__haut">
+      <div class="hero__texte">
+        <h1 id="t-hero" class="hero__titre">
+          <span class="hero__ligne">Ton club de boxe</span>
+          <span class="hero__ligne">et de MMA</span>
+          <span class="hero__ligne hero__ligne--accent">à proximité de {SITE.ville}.</span>
+        </h1>
+
+        <p class="hero__promesse">
+          <strong>Boxe anglaise, pieds-poings, MMA, grappling et École enfants dès 3 ans.</strong>
+          300 m² couverts en plein air, un octogone de sept mètres, un grand ring.
+          Ouvert {DESTINATION.horaires.valeur}, et les gants sont prêtés.
+        </p>
+
+        <div class="hero__actions">
+          <a class="bouton bouton--signal" href={route('ta-seance').chemin}>
+            <span>Trouver ma séance</span>
+            <span class="fleche" aria-hidden="true">→</span>
+          </a>
+          <a class="bouton" href={route('transports').chemin}>
+            <span>Y aller sans voiture</span>
+            <span class="fleche" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <dl class="hero__faits">
+        <div>
+          <dt class="mono">Le club</dt>
+          <dd>{DESTINATION.nomCourt}, au terminus du métro B</dd>
+        </div>
+        <div>
+          <dt class="mono">Accueil</dt>
+          <dd>{DESTINATION.horairesCourt}</dd>
+        </div>
+        <div>
+          <dt class="mono">Depuis {SITE.ville}</dt>
+          <dd>
+            <a class="hero__fait-lien" href={route('transports').chemin}>
+              {SITE.accesCourt}<span class="fleche" aria-hidden="true">→</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  {/* ─────────────── LE PLAN ─────────────── */}
+  <div class="enveloppe">
+    <figure class="plan" data-plan>
+      <figcaption class="vh">
+        Trois lignes mènent au club et s’y arrêtent : la 79 depuis Labège, la
+        Linéo L6 depuis Castanet-Tolosan, le métro B depuis Toulouse. Toutes
+        finissent à Ramonville-Saint-Agne, où Boxing Center occupe 300 m²
+        couverts en plein air, avec un octogone de sept mètres et un grand ring,
+        ouvert de 10h à 21h30 du lundi au samedi.
+      </figcaption>
+
+      {/* ── Tracé horizontal — écrans larges ── */}
+      <svg
+        class="plan__svg plan__svg--h"
+        viewBox="0 0 1200 440"
+        role="img"
+        aria-hidden="true"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {/* Les trois lignes, latentes puis tracées. */}
+        <path class="plan__trait" d="M 150 80 H 620 L 916 190" fill="none" />
+        <path class="plan__trait" d="M 150 220 H 940" fill="none" />
+        <path class="plan__trait" d="M 150 360 H 620 L 916 250" fill="none" />
+
+        <path class="plan__voie plan__voie--1" d="M 150 80 H 620 L 916 190" fill="none" pathLength="100" />
+        <path class="plan__voie plan__voie--2" d="M 150 220 H 940" fill="none" pathLength="100" />
+        <path class="plan__voie plan__voie--3" d="M 150 360 H 620 L 916 250" fill="none" pathLength="100" />
+
+        {/* Les trois départs */}
+        <g class="plan__depart" style="--rang:1">
+          <circle cx="150" cy="80" r="6" />
+          <text class="plan__depart-code" x="150" y="52" text-anchor="middle">MÉTRO B</text>
+          <text class="plan__depart-nom" x="150" y="34" text-anchor="middle">TOULOUSE</text>
+        </g>
+        <g class="plan__depart" style="--rang:2">
+          <circle cx="150" cy="220" r="6" />
+          <text class="plan__depart-code" x="150" y="194" text-anchor="middle">LIGNE 79</text>
+          <text class="plan__depart-nom" x="150" y="176" text-anchor="middle">LABÈGE</text>
+        </g>
+        <g class="plan__depart" style="--rang:3">
+          <circle cx="150" cy="360" r="6" />
+          <text class="plan__depart-code" x="150" y="388" text-anchor="middle">LINÉO L6</text>
+          <text class="plan__depart-nom" x="150" y="410" text-anchor="middle">CASTANET-TOLOSAN</text>
+        </g>
+
+        {/* Cotes — les faits du club */}
+        <g class="plan__cote" style="--rang:1">
+          <path class="plan__cote-ligne" d="M 700 220 V 148" />
+          <path class="plan__cote-tick" d="M 692 148 H 708" />
+          <text class="plan__cote-texte" x="700" y="132" text-anchor="middle">{surface}</text>
+        </g>
+        <g class="plan__cote" style="--rang:2">
+          <path class="plan__cote-ligne" d="M 460 220 V 292" />
+          <path class="plan__cote-tick" d="M 452 292 H 468" />
+          <text class="plan__cote-texte" x="460" y="314" text-anchor="middle">{equipement}</text>
+        </g>
+
+        {/* Le terminus : l'octogone du club, et la barre de fin de ligne. */}
+        <g class="plan__terminus">
+          <path class="plan__barre" d="M 990 158 V 282" />
+          <polygon
+            class="plan__octogone"
+            points="940,196 954,182 974,182 988,196 988,216 974,230 954,230 940,216"
+          />
+          <circle class="plan__coeur" cx="964" cy="206" r="5" />
+          <text class="plan__terminus-nom" x="964" y="268" text-anchor="middle">RAMONVILLE</text>
+          <text class="plan__terminus-cp" x="964" y="286" text-anchor="middle">33 rue des Ormes · {cours}</text>
+        </g>
+      </svg>
+
+      {/* ── Tracé vertical — téléphones ── */}
+      <svg
+        class="plan__svg plan__svg--v"
+        viewBox="0 0 360 620"
+        role="img"
+        aria-hidden="true"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path class="plan__trait" d="M 60 90 V 380 L 172 452" fill="none" />
+        <path class="plan__trait" d="M 180 90 V 468" fill="none" />
+        <path class="plan__trait" d="M 300 90 V 380 L 188 452" fill="none" />
+
+        <path class="plan__voie plan__voie--1" d="M 60 90 V 380 L 172 452" fill="none" pathLength="100" />
+        <path class="plan__voie plan__voie--2" d="M 180 90 V 468" fill="none" pathLength="100" />
+        <path class="plan__voie plan__voie--3" d="M 300 90 V 380 L 188 452" fill="none" pathLength="100" />
+
+        <g class="plan__depart" style="--rang:1">
+          <circle cx="60" cy="90" r="6" />
+          <text class="plan__depart-code" x="60" y="66" text-anchor="middle">MÉTRO B</text>
+          <text class="plan__depart-nom" x="60" y="46" text-anchor="middle">TOULOUSE</text>
+        </g>
+        <g class="plan__depart" style="--rang:2">
+          <circle cx="180" cy="90" r="6" />
+          <text class="plan__depart-code" x="180" y="66" text-anchor="middle">LIGNE 79</text>
+          <text class="plan__depart-nom" x="180" y="46" text-anchor="middle">LABÈGE</text>
+        </g>
+        <g class="plan__depart" style="--rang:3">
+          <circle cx="300" cy="90" r="6" />
+          <text class="plan__depart-code" x="300" y="66" text-anchor="middle">LINÉO L6</text>
+          <text class="plan__depart-nom" x="300" y="46" text-anchor="middle">CASTANET</text>
+        </g>
+
+        <g class="plan__cote" style="--rang:1">
+          <path class="plan__cote-ligne" d="M 180 220 H 268" />
+          <path class="plan__cote-tick" d="M 268 212 V 228" />
+          <text class="plan__cote-texte" x="272" y="204" text-anchor="end">{surface}</text>
+        </g>
+        <g class="plan__cote" style="--rang:2">
+          <path class="plan__cote-ligne" d="M 180 320 H 92" />
+          <path class="plan__cote-tick" d="M 92 312 V 328" />
+          <text class="plan__cote-texte" x="88" y="304" text-anchor="start">{equipement}</text>
+        </g>
+
+        <g class="plan__terminus">
+          <path class="plan__barre" d="M 122 512 H 238" />
+          <polygon
+            class="plan__octogone"
+            points="166,458 180,444 194,458 194,472 180,486 166,472"
+          />
+          <circle class="plan__coeur" cx="180" cy="466" r="5" />
+          <text class="plan__terminus-nom" x="180" y="546" text-anchor="middle">RAMONVILLE</text>
+          <text class="plan__terminus-cp" x="180" y="566" text-anchor="middle">33 rue des Ormes</text>
+        </g>
+      </svg>
+
+      <div class="plan__bloc mono">
+        <span><b>{SITE.ville}</b> → {DESTINATION.ville}</span>
+        <span>Boxing Center</span>
+        <span class="plan__bloc-src">{DESTINATION.adresse}</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) clamp(3rem, 2rem + 4vw, 5rem);
+    background: var(--papier);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--trait-faible) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--trait-faible) 1px, transparent 1px);
+    background-size: 3.5rem 3.5rem;
+    mask-image: radial-gradient(120% 90% at 62% 45%, #000 0%, transparent 78%);
+    opacity: 0.55;
+  }
+  .hero > * { position: relative; }
+
+  .hero__cartouche {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-3);
+    align-items: center;
+    padding-bottom: var(--e-4);
+    border-bottom: 1px solid var(--trait);
+    margin-bottom: var(--e-7);
+  }
+  .hero__planche { color: var(--signal-texte); font-weight: 700; }
+
+  .hero__haut {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+    gap: var(--e-6) var(--e-8);
+    align-items: end;
+  }
+  @media (max-width: 62rem) {
+    .hero__haut { grid-template-columns: 1fr; align-items: start; }
+  }
+
+  .hero__titre { max-width: 15ch; margin-bottom: var(--e-5); }
+  .hero__ligne {
+    display: block;
+    animation: poser 700ms var(--e-sortie) both;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
+  .hero__ligne:nth-child(1) { --i: 0; }
+  .hero__ligne:nth-child(2) { --i: 1; }
+  .hero__ligne:nth-child(3) { --i: 2; }
+  .hero__ligne--accent { color: var(--signal-texte); }
+  @keyframes poser {
+    from { opacity: 0; transform: translateY(0.8em) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .hero__promesse {
+    max-width: 54ch;
+    font-size: var(--t-lead);
+    line-height: 1.45;
+    color: var(--texte-faible);
+    padding-left: var(--e-5);
+    border-left: 2px solid var(--signal);
+  }
+  .hero__promesse strong { color: var(--encre); font-weight: 600; }
+
+  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-6); }
+
+  .hero__faits { display: grid; gap: 0; margin: 0; }
+  .hero__faits > div {
+    display: grid;
+    gap: 0.15rem;
+    padding: var(--e-3) 0;
+    border-top: 1px solid var(--trait);
+  }
+  .hero__faits > div:last-child { border-bottom: 1px solid var(--trait); }
+  .hero__faits dt { color: var(--graphite); }
+  .hero__faits dd { margin: 0; font-size: var(--t-petit); font-weight: 600; }
+  .hero__fait-lien {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+    color: var(--signal-texte);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--d-rapide) var(--e-mecanique);
+  }
+  .hero__fait-lien:hover { border-color: currentColor; }
+
+  /* ── Le plan ───────────────────────────────────────────────────────── */
+  .plan { position: relative; margin: var(--e-8) 0 0; }
+  .plan__svg { width: 100%; height: auto; overflow: visible; }
+  .plan__svg--v { display: none; }
+  @media (max-width: 48rem) {
+    .plan__svg--h { display: none; }
+    .plan__svg--v { display: block; max-width: 22rem; margin-inline: auto; }
+  }
+
+  .plan__trait {
+    stroke: var(--graphite);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    opacity: 0.4;
+  }
+
+  /* Les trois voies se tracent l'une après l'autre, vers le terminus. */
+  .plan__voie {
+    stroke: var(--signal-texte);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    fill: none;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: tracer 900ms var(--e-resolution) forwards;
+  }
+  .plan__voie--1 { animation-delay: 200ms; opacity: 0.55; }
+  .plan__voie--2 { animation-delay: 360ms; }
+  .plan__voie--3 { animation-delay: 520ms; opacity: 0.55; }
+  @keyframes tracer { to { stroke-dashoffset: 0; } }
+
+  .plan__depart {
+    opacity: 0;
+    animation: apparaitre 380ms var(--e-sortie) forwards;
+    animation-delay: calc(var(--rang) * 160ms);
+  }
+  @keyframes apparaitre { to { opacity: 1; } }
+  .plan__depart circle { fill: var(--encre); }
+  .plan__depart-nom {
+    font-family: var(--police-mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    fill: var(--encre);
+  }
+  .plan__depart-code {
+    font-family: var(--police-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    fill: var(--signal-texte);
+  }
+
+  .plan__cote {
+    opacity: 0;
+    animation: apparaitre 420ms var(--e-sortie) forwards;
+    animation-delay: calc(1400ms + var(--rang) * 120ms);
+  }
+  .plan__cote-ligne,
+  .plan__cote-tick {
+    stroke: var(--graphite);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    fill: none;
+    opacity: 0.7;
+  }
+  .plan__cote-ligne { stroke-dasharray: 4 4; }
+  .plan__cote-texte {
+    font-family: var(--police-mono);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    fill: var(--signal-texte);
+  }
+
+  /* Le terminus : la barre de fin de ligne, et l'octogone du club. */
+  .plan__terminus {
+    opacity: 0;
+    animation: apparaitre 420ms var(--e-sortie) 1500ms forwards;
+  }
+  .plan__barre {
+    stroke: var(--encre);
+    stroke-width: 5;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    fill: none;
+  }
+  .plan__octogone {
+    fill: var(--papier-vif);
+    stroke: var(--signal-texte);
+    stroke-width: 2.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .plan__coeur {
+    fill: var(--signal-texte);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: battre 2.6s var(--e-mecanique) 2.2s infinite;
+  }
+  @keyframes battre {
+    0%, 74%, 100% { transform: scale(1); opacity: 1; }
+    86% { transform: scale(1.9); opacity: 0.3; }
+  }
+  .plan__terminus-nom {
+    font-family: var(--police-mono);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    fill: var(--encre);
+  }
+  .plan__terminus-cp {
+    font-family: var(--police-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    fill: var(--graphite);
+  }
+
+  .plan__bloc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-2) var(--e-5);
+    margin-top: var(--e-5);
+    padding-top: var(--e-3);
+    border-top: 1px solid var(--trait);
+    text-transform: none;
+    letter-spacing: 0.05em;
+    color: var(--graphite);
+  }
+  .plan__bloc b { color: var(--encre); font-weight: 700; }
+  .plan__bloc-src { margin-left: auto; }
+  @media (max-width: 62rem) { .plan__bloc-src { margin-left: 0; } }
+
+  /* ── Sans script, et en mouvement réduit : le plan est déjà fini. ──── */
+  :global(.no-js) .plan__depart,
+  :global(.no-js) .plan__cote,
+  :global(.no-js) .plan__terminus,
+  :global(.no-js) .hero__ligne { animation: none; opacity: 1; }
+  :global(.no-js) .plan__voie { stroke-dashoffset: 0; animation: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .plan__depart,
+    .plan__cote,
+    .plan__terminus,
+    .plan__coeur,
+    .hero__ligne { animation: none !important; opacity: 1; transform: none; }
+    .plan__voie { stroke-dashoffset: 0; animation: none; }
+  }
+</style>
