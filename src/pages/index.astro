@@ -39,7 +39,7 @@ const QUESTIONS = [
   {
     titre: 'Je travaille à l’Innopole. Il y a des cours le midi ?',
     texte:
-      'Le club publie 22 cours par semaine, du lundi midi au samedi après-midi, et ouvre de 10h à 21h30. Le midi et la sortie de bureau sont les deux créneaux qui tiennent le mieux dans une semaine de travail. Le planning du club donne l’horaire exact.',
+      `Le club publie 22 cours par semaine, du lundi midi au samedi après-midi, et ouvre de ${DESTINATION.ouvertureTexte} à ${DESTINATION.fermetureTexte}. Le midi et la sortie de bureau sont les deux créneaux qui tiennent le mieux dans une semaine de travail. Le planning du club donne l’horaire exact.`,
   },
   {
     titre: 'Comment y aller sans voiture ?',
@@ -112,7 +112,7 @@ const QUESTIONS = [
       <div class="disciplines__tete">
         <h2 id="t-disciplines">Les cours, avec les noms<br />que tu verras sur le planning.</h2>
         <p class="lead faible disciplines__intro">
-          Vingt-deux séances par semaine, réparties sur ces huit intitulés. Si un
+          Vingt-deux séances par semaine, réparties sur ces intitulés. Si un
           nom ne figure pas ici, c’est qu’il ne figure pas chez eux.
         </p>
       </div>
@@ -339,7 +339,7 @@ const QUESTIONS = [
           Ce site s’adresse aux deux. Aux Labégeois qui cherchent un club près de
           chez eux, et aux milliers de personnes qui travaillent sur la zone et
           veulent un cours du midi ou de sortie de bureau. Dans les deux cas, la
-          79 mène au même endroit, et le club est ouvert de 10h à 21h30.
+          79 mène au même endroit, et le club est ouvert de {DESTINATION.ouvertureTexte} à {DESTINATION.fermetureTexte}.
         </p>
       </div>
       <div class="local__photo">
