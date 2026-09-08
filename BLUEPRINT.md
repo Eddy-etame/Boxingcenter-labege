@@ -4,17 +4,17 @@ Loi commune : `../BLUEPRINT-SATELLITES-BOXING-CENTER.md`.
 Domaine `www.boxingcenter-labege.fr` · dépôt `https://github.com/Eddy-etame/Boxingcenter-labege.git`.
 
 ## Destination — une seule
-**Boxing Center Ramonville** · 33 rue des Ormes, 31520 Ramonville-Saint-Agne · 05 62 24 46 82 · lun–sam 10h–21h30 (dépôt bc-ramonville, 10 occurrences ; site vivant muet → confirmer).
+**Boxing Center Ramonville** · 33 rue des Ormes, 31520 Ramonville-Saint-Agne · 05 62 24 46 82 · le site dit « **midi et soir, du lundi au samedi** — 22 cours par semaine » (page plannings, 2026-09-08) ; l'amplitude 10h–21h30 vient du dépôt bc-ramonville (source : dépôt, pas le site vivant) — écrire la formule du site, garder 10h–21h30 dans le registre avec sa source.
 URLs : `https://mmatoulouse.com/` · `/activites/` · `/plannings/` · `/tarifs/` · `/la-salle/`.
 Faits (site, 2026-09-08) : « Boxe et MMA à Ramonville | Débutants bienvenus », **300 m² à ciel ouvert** (l'octogone extérieur — la singularité du réseau), accès **métro B terminus Ramonville**, cours dès 3 ans, gants et bandes fournis, 29 € / 4 semaines, 44 €.
-Offre réelle (planning image du stock, à confirmer sur /activites/) : Boxing Camp · Boxe anglaise · Open sparring · Baby boxe 3/6 · Boxe éducative enfants / ados / compétiteurs · Boxing Lady · Boxe pieds-poings · Grappling · Anglaise confirmés · Kick boxing / K1 · Hyrox.
+Offre réelle (page plannings, 2026-09-08) : Anglaise · Pieds-poings · Grappling · **MMA** · Boxing Camp · Lady Punch · École dès 3 ans ; le planning du stock ajoute Open sparring, Baby boxe 3/6, Boxe éducative enfants / ados / compétiteurs, Boxing Lady, K1, Hyrox — à confirmer sur `/activites/` le jour de l'écriture.
 **Argument propre à Labège : la commune est limitrophe de Ramonville-Saint-Agne.** Fun fact : « 300 m² d'entraînement à ciel ouvert, au terminus du métro B ».
 
 ## Labège — faits (Wikipédia, 2026-09-08)
-31670 · INSEE 31254 · 4 392 hab. (2023) · Labègeois · 11 km au sud-est de Toulouse · A61 échangeur du Palays · D813 (ex-RN113) · **deux gares TER : Labège-Innopole et Labège-Village** · bus 79, 80, 109 · prolongement du métro B vers Labège (état à vérifier avant d'écrire).
+31670 · INSEE 31254 · 4 392 hab. (2023) · Labègeois · 11 km au sud-est de Toulouse · A61 échangeur du Palays · D813 (ex-RN113) · **deux gares TER : Labège-Innopole et Labège-Village** · bus 79, 80, 109 · prolongement du métro B vers Labège : **projet non ouvert** (deux stations validées, Parc du Canal et Institut National Polytechnique, aucune date — Wikipédia 2026-09-08) → ne pas l'écrire. Le métro B se prend au terminus Ramonville, où est le club.
 Deux visages : **Labège-Innopole / Enova** (Carrefour, Gaumont, IoT Valley — des milliers de salariés en journée) et Labège-Village. Le site parle aux deux : aux habitants ET aux gens qui y travaillent (cours du midi, sortie de bureau).
 Limitrophes : Auzeville-Tolosane, Castanet-Tolosan, Escalquens, **Ramonville-Saint-Agne**, Saint-Orens-de-Gameville, Toulouse.
-Accès au club : Labège → Ramonville par la D813 / Auzeville, ou le métro B.
+Accès au club : Labège → Ramonville par la D813 / Auzeville ; le club est au terminus du métro B (Ramonville), accessible depuis Labège en bus 79/80/109 puis métro — vérifier la correspondance exacte avant de l'écrire.
 
 ## Communes satellites — une page chacune
 | Commune | CP | Note |
@@ -42,8 +42,8 @@ Nav : Plannings ↗ `mmatoulouse.com/plannings/` · Tarifs ↗ `/tarifs/`.
 | MARDI_062 | `coach-boxe-labege-2.webp` | ethos | Un coach senior, poing levé, tee Boxing Center |
 | MARDI_048 | `preparation-physique-labege.webp` | prépa physique | Séance au sol avec haltères |
 | TMBC-273 / 276 | `cardio-labege.webp` | vignettes | Le plateau cardio |
-Légende : « Boxing Center Ramonville » (TMBC) ; les « MARDI » viennent d'une autre salle du réseau → légender la bonne salle une fois confirmée (Saint-Cyprien ?). Vérifier avant publication.
+Légende : « … — Boxing Center Ramonville » pour les TMBC (club de destination) ; « … — Boxing Center » sans salle pour les « MARDI » (loi commune §8).
 
 ## Système visuel — sous-famille Ramonville : os · encre · accent **vert gazon profond** (à mesurer), le ciel ouvert comme motif (lumière du jour, pas de nuit — Ramonville lui-même est « nuit »).
 ## Concurrence : « club de boxe Labège », « MMA Labège », « boxe thaï Labège » + Saint-Orens, Castanet.
-## Bloquants : horaires Ramonville sur le site vivant · métro B Labège · salle réelle des photos « MARDI ».
+## Bloquants : confirmer l'offre sur `/activites/` le jour de l'écriture · la salle de la séance « MARDI » (question posée à Eddy).
