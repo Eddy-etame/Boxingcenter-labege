@@ -150,7 +150,7 @@ export const CONTENUS: readonly Contenu[] = [
   },
   {
     id: 'kick-boxing',
-    h1: 'Boxe pieds-poings à proximité de Labège',
+    h1: 'Boxe pieds-poings et kick-boxing à proximité de Labège',
     chapeau:
       'La Boxe Pieds-Poings ajoute les jambes aux poings. Le club la publie sous ce nom, pour les adultes. Depuis Labège, la ligne 79 t’emmène à Ramonville sans changement, au terminus du métro B.',
     photoHero: 'entrainement-mma-labege',
@@ -168,7 +168,7 @@ export const CONTENUS: readonly Contenu[] = [
           'La souplesse vient avec les séances. Les premières semaines, les coups de pied restent bas — et le low kick, qui est bas par définition, est l’arme la plus utilisée. La hauteur arrive toute seule avec les étirements de fin de séance.',
       },
       {
-        titre: 'Kick-boxing, boxe thaï, K1 : les mots qu’on entend',
+        titre: 'Club de kick-boxing, club de boxe thaï près de Labège : les mots qu’on entend',
         texte:
           'Sous ces noms vivent plusieurs règlements. Le club publie « Boxe Pieds-Poings » : poings et jambes, en garde haute et sur appuis. Si tu cherches précisément la boxe thaï, avec les coudes et les genoux, dis-le dans ton message — on te répond avec ce qui se pratique réellement dans le réseau.',
       },

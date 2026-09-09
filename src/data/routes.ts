@@ -82,7 +82,7 @@ export const ROUTES: readonly Route[] = [
     chemin: '/kick-boxing/',
     nav: 'Pieds-poings',
     question: 'Je veux frapper avec les jambes aussi. Où ?',
-    titre: 'Boxe pieds-poings et kick-boxing près de Labège | Boxing Center',
+    titre: 'Club de kick-boxing près de Labège | Boxing Center',
     description:
       'Le club publie la Boxe Pieds-Poings : poings et jambes, en garde haute. Accessible depuis Labège par la ligne 79, au terminus du métro B à Ramonville.',
     menu: true,
