@@ -175,7 +175,7 @@ export const ROUTES: readonly Route[] = [
     question: 'Je veux poser ma question à quelqu’un.',
     titre: 'Contact | Boxing Center depuis Labège',
     description:
-      'Une question avant de te déplacer depuis Labège ? Écris-nous, on te répond avec le cours et le créneau qui correspondent. Téléphone : 05 62 24 46 82.',
+      'Une question avant de te déplacer depuis Labège ? Écris-nous, on te répond avec le cours et le créneau qui correspondent. Téléphone : 09 39 03 67 48.',
     menu: true,
     index: true,
   },
