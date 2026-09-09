@@ -70,7 +70,7 @@ attribuer d'adresse dans ${SITE.ville} même.
 - Ce qui le distingue : ${DESTINATION.singularite} Un grand ring, et un étage de
   musculation et de cardio en accès libre. 22 cours par semaine.
 
-## Les huit cours publiés par le club
+## Les cours publiés par le club
 
 ${disciplines}
 

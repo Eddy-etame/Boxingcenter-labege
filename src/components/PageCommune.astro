@@ -54,7 +54,7 @@ const voisinage = c.toucheLeClub
 
 const REPONSES: Record<string, string> = {
   [`club de boxe ${c.nom}`]: `${DESTINATION.nom}, ${DESTINATION.adresse}, au terminus du métro B. Le club est ouvert ${DESTINATION.horairesCourt}, et il prête les gants.`,
-  [`boxe anglaise ${c.nom}`]: `La Boxe Anglaise est l’un des huit cours publiés par le club. Les poings seuls, aucun niveau demandé à l’entrée.`,
+  [`boxe anglaise ${c.nom}`]: `La Boxe Anglaise est l’un des cours publiés par le club. Les poings seuls, aucun niveau demandé à l’entrée.`,
   [`club MMA ${c.nom}`]: `Le cours s’appelle « MMA tous niveaux » et il se déroule dans l’octogone de sept mètres, sous les 300 m² couverts en plein air.`,
   [`salle MMA ${c.nom}`]: `L’octogone est à ${DESTINATION.ville}, ${DESTINATION.adresse}. C’est la salle MMA à viser depuis ${c.nom}.`,
   [`sport de combat ${c.nom}`]: `Huit cours publiés, de l’École enfants dès 3 ans à l’accès libre en musculation. On commence par celui qui correspond, on change en cours d’année si besoin.`,
@@ -206,7 +206,7 @@ const LEGENDE = motifs(c.nom).map((m) => ({ motif: m, reponse: REPONSES[m] }));
     <div class="enveloppe">
       <p class="cartouche"><span class="cartouche__num">04</span><span>Au club</span></p>
       <div class="auclub__tete">
-        <h2 id="t-auclub">Les neuf cours du club.</h2>
+        <h2 id="t-auclub">Ce que le club publie.</h2>
         <p class="lead faible">
           Voilà tout ce qui se pratique, avec les noms exacts que tu verras sur
           le planning. {DESTINATION.singularite}
