@@ -150,7 +150,7 @@ export const CONTENUS: readonly Contenu[] = [
   },
   {
     id: 'kick-boxing',
-    h1: 'Boxe pieds-poings et kick-boxing à proximité de Labège',
+    h1: 'Kick-boxing et boxe pieds-poings près de Labège',
     chapeau:
       'La Boxe Pieds-Poings ajoute les jambes aux poings. Le club la publie sous ce nom, pour les adultes. Depuis Labège, la ligne 79 t’emmène à Ramonville sans changement, au terminus du métro B.',
     photoHero: 'entrainement-mma-labege',
