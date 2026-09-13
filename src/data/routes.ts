@@ -63,7 +63,7 @@ export const ROUTES: readonly Route[] = [
     question: 'À quoi ressemble un cours de boxe anglaise, et est-ce que je peux commencer ?',
     titre: 'Boxe anglaise près de Labège | Boxing Center',
     description:
-      'Cours de boxe anglaise accessibles depuis Labège, au club Boxing Center de Ramonville. Aucun niveau demandé, gants prêtés, six jours sur sept.',
+      'Cours de boxe anglaise accessibles depuis Labège, au club Boxing Center de Ramonville. Aucun niveau demandé, six jours sur sept.',
     menu: true,
     index: true,
   },

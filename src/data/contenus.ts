@@ -32,7 +32,7 @@ export const CONTENUS: readonly Contenu[] = [
     id: 'boxe-anglaise',
     h1: 'Cours de boxe anglaise à proximité de Labège',
     chapeau:
-      'Des gants, les poings, un coach qui corrige : la boxe anglaise s’apprend à partir de zéro, et le club prête les gants. Depuis Labège, la ligne 79 t’emmène à Ramonville sans changement — le club est ouvert du lundi au samedi, de 10h à 21h30.',
+      'Des gants, les poings, un coach qui corrige : la boxe anglaise s’apprend à partir de zéro. Depuis Labège, la ligne 79 t’emmène à Ramonville sans changement — le club est ouvert du lundi au samedi, de 10h à 21h30.',
     photoHero: 'cours-boxe-labege',
     photoSecondaire: 'coach-boxe-labege',
     promesse: 'Du sac au grand ring, à ton rythme, avec un coach qui reprend ton geste à chaque passage.',
@@ -199,7 +199,7 @@ export const CONTENUS: readonly Contenu[] = [
       {
         titre: 'Il faut acheter des protège-tibias ?',
         texte:
-          'Pour la première séance, une tenue de sport suffit, et le club prête les gants. Les protège-tibias viendront si tu continues : le club te dira lesquels.',
+          'Pour la première séance, une tenue de sport suffit. Les protège-tibias viendront si tu continues : le club te dira lesquels.',
       },
       {
         titre: 'Mon fils joue au foot : le pieds-poings l’aiderait ?',

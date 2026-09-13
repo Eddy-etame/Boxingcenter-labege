@@ -53,7 +53,7 @@ const voisinage = c.toucheLeClub
   : `${c.nom} est à une commune de ${DESTINATION.ville}`;
 
 const REPONSES: Record<string, string> = {
-  [`club de boxe ${c.nom}`]: `${DESTINATION.nom}, ${DESTINATION.adresse}, au terminus du métro B. Le club est ouvert ${DESTINATION.horairesCourt}, et il prête les gants.`,
+  [`club de boxe ${c.nom}`]: `${DESTINATION.nom}, ${DESTINATION.adresse}, au terminus du métro B. Le club est ouvert ${DESTINATION.horairesCourt}.`,
   [`boxe anglaise ${c.nom}`]: `La Boxe Anglaise est l’un des cours publiés par le club. Les poings seuls, aucun niveau demandé à l’entrée.`,
   [`club MMA ${c.nom}`]: `Le cours s’appelle « MMA tous niveaux » et il se déroule dans l’octogone de sept mètres, sous les 300 m² couverts en plein air.`,
   [`salle MMA ${c.nom}`]: `L’octogone est à ${DESTINATION.ville}, ${DESTINATION.adresse}. C’est la salle MMA à viser depuis ${c.nom}.`,
