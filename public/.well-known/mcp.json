@@ -4,7 +4,7 @@
   "description": "Boxing Center Labège — plateforme d’orientation vers les clubs Boxing Center.",
   "protocol": "mcp",
   "transport": "streamable-http",
-  "endpoint": "https://www.boxingcenter-labege.fr/api/mcp",
+  "endpoint": "https://www.boxingcenter-labege.fr/api/mcp/",
   "documentation": "https://www.boxingcenter-labege.fr/humans.txt",
   "tools": [
     {
