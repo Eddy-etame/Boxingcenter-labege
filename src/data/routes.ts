@@ -120,7 +120,7 @@ export const ROUTES: readonly Route[] = [
     description:
       'Ce qu’il faut apporter, ce que tu vas faire, et ce que le club te prête : le déroulé d’un premier cours pour un débutant venu de Labège.',
     menu: false,
-    index: false,
+    index: true,
   },
   {
     id: 'ta-seance',
@@ -131,7 +131,7 @@ export const ROUTES: readonly Route[] = [
     description:
       'Deux réponses et tu sais quel cours viser à Boxing Center Ramonville, et à quel moment de la semaine y aller depuis Labège ou depuis l’Innopole.',
     menu: true,
-    index: false,
+    index: true,
   },
   {
     id: 'transports',
@@ -179,7 +179,7 @@ export const ROUTES: readonly Route[] = [
       'Portet-sur-Garonne, Minimes, États-Unis, Saint-Cyprien et Ramonville : les cinq clubs Boxing Center autour de Labège, leur adresse et le lien vers leur site.',
     menu: true,
     // hors index : mêmes adresses sur les sept sites de proximité ; liens suivis
-    index: false,
+    index: true,
   },
   {
     id: 'contact',
@@ -190,7 +190,7 @@ export const ROUTES: readonly Route[] = [
     description:
       'Une question avant de te déplacer depuis Labège ? Écris-nous, on te répond avec le cours et le créneau qui correspondent. Téléphone : 09 39 03 67 48.',
     menu: true,
-    index: false,
+    index: true,
   },
   {
     id: 'merci',
@@ -220,7 +220,7 @@ export const ROUTES: readonly Route[] = [
     titre: 'Mentions légales | Boxing Center Labège',
     description: 'Mentions légales du site boxingcenter-labege.fr.',
     menu: false,
-    index: false,
+    index: true,
   },
   {
     id: 'confidentialite',
@@ -230,7 +230,7 @@ export const ROUTES: readonly Route[] = [
     titre: 'Politique de confidentialité | Boxing Center Labège',
     description: 'Ce que devient une demande envoyée depuis boxingcenter-labege.fr.',
     menu: false,
-    index: false,
+    index: true,
   },
 ] as const;
 
