@@ -25,6 +25,11 @@ export type RouteId =
   | 'saint-orens-de-gameville'
   | 'castanet-tolosan'
   | 'nos-clubs'
+  /* conseils:début */
+  | 'conseils'
+  | 'tenue-grappling'
+  | 'entretien-gants-de-boxe'
+  /* conseils:fin */
   | 'contact'
   | 'merci'
   | 'introuvable'
@@ -181,6 +186,41 @@ export const ROUTES: readonly Route[] = [
     // hors index : mêmes adresses sur les sept sites de proximité ; liens suivis
     index: true,
   },
+  /* conseils:routes */
+  {
+    id: 'conseils',
+    chemin: '/conseils/',
+    nav: 'Conseils matériel',
+    question: 'Comment s’habiller pour le grappling, et comment entretenir ses gants ?',
+    titre: 'Grappling, entretien des gants : conseils | Labège',
+    description:
+      'Tenue de grappling, entretien des gants de boxe : les conseils matériel de Boxing Center pour les Labégeois qui s’entraînent à Ramonville.',
+    menu: false,
+    index: true,
+  },
+  {
+    id: 'tenue-grappling',
+    chemin: '/conseils/tenue-grappling/',
+    nav: 'Tenue de grappling',
+    question: 'Comment s’habiller pour un cours de grappling ?',
+    titre: 'Grappling : quelle tenue pour débuter ?',
+    description:
+      'Rashguard, short sans poche, protège-dents : la tenue de grappling d’un débutant, ce qui reste au vestiaire, et où pratiquer depuis Labège.',
+    menu: false,
+    index: true,
+  },
+  {
+    id: 'entretien-gants-de-boxe',
+    chemin: '/conseils/entretien-gants-de-boxe/',
+    nav: 'Entretenir ses gants',
+    question: 'Comment entretenir et désodoriser des gants de boxe ?',
+    titre: 'Entretenir ses gants de boxe : séchage, odeur, durée',
+    description:
+      'Sécher, désodoriser, ranger : comment entretenir des gants de boxe pour qu’ils durent, et à quel moment il faut vraiment les remplacer.',
+    menu: false,
+    index: true,
+  },
+  /* conseils:routes:fin */
   {
     id: 'contact',
     chemin: '/contact/',
