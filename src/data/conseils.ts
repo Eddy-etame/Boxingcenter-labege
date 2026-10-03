@@ -65,7 +65,7 @@ export const CONSEILS: readonly Conseil[] = [
     photo: 'grappling-labege',
     sujet: 'Conseil · Grappling',
     publie: '2026-10-02',
-    maj: '2026-10-02',
+    maj: '2026-10-03',
     sections: [
       {
         sur: 'Le cours',
@@ -88,7 +88,7 @@ export const CONSEILS: readonly Conseil[] = [
         h2: 'Un short sans poche, sans zip, sans cordon qui pend.',
         paras: [
           'Tout ce qui dépasse devient un piège à doigts ou à orteils. Le <a class="lien" href="https://www.boutique-de-boxe.com/shorts-mma/" rel="noopener">short de combat</a> se ferme par un scratch à plat et un cordon intérieur, avec des fentes sur les côtés pour ouvrir les hanches.',
-          'Beaucoup portent un legging ou un short de compression dessous : il évite les brûlures aux genoux, et tient une coquille quand le coach en demande une.',
+          'Beaucoup portent un legging ou un short de compression dessous : il évite les brûlures aux genoux, et tient une coquille quand le coach en demande une. Rashguards, shorts et spats sont réunis sur la page <a class="lien" href="https://www.boutique-de-boxe.com/equipement-jjb/" rel="noopener">équipement de grappling</a> de Boutique de Boxe.',
         ],
       },
       {
@@ -149,7 +149,7 @@ export const CONSEILS: readonly Conseil[] = [
     photo: 'salle-de-boxe-labege',
     sujet: 'Conseil · Entretien des gants',
     publie: '2026-10-02',
-    maj: '2026-10-02',
+    maj: '2026-10-03',
     sections: [
       {
         sur: 'La cause',
@@ -187,7 +187,7 @@ export const CONSEILS: readonly Conseil[] = [
         h2: 'À quel moment changer de gants.',
         paras: [
           'Appuie avec le pouce sur les jointures : si tu sens tes doigts à travers la mousse, le gant ne protège plus — ni toi, ni ton partenaire. Coutures ouvertes, scratch qui ne tient plus, doublure déchirée : même conclusion.',
-          'Au moment de remplacer, <a class="lien" href="https://www.boutique-de-boxe.com/guides/choisir-gants-boxe/" rel="noopener">« Comment choisir ses gants de boxe »</a>, le guide de Boutique de Boxe, la boutique de matériel du groupe, évite de reprendre le même modèle par habitude. Une paire d’entrée de gamme s’achète aussi à <a class="lien" href="https://boutique.boxingcenter.fr/materiel" rel="noopener">la boutique Boxing Center</a>, retirée à la salle.',
+          'Au moment de remplacer, <a class="lien" href="https://www.boutique-de-boxe.com/guides/choisir-gants-boxe/" rel="noopener">« Comment choisir ses gants de boxe »</a>, le guide de Boutique de Boxe, la boutique de matériel du groupe, évite de reprendre le même modèle par habitude. Une paire d’entrée de gamme s’achète aussi à <a class="lien" href="https://boutique.boxingcenter.fr/materiel" rel="noopener">la boutique Boxing Center</a>, retirée à la salle. Et si tout le sac est à refaire, <a class="lien" href="https://www.boutique-de-boxe.com/materiel-boxe/" rel="noopener">le rayon matériel de boxe</a> repart des trois pièces du début.',
         ],
       },
     ],
